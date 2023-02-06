@@ -46,6 +46,8 @@
 		BB3C8DB429919076005115BA /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB329919076005115BA /* Routes.swift */; };
 		BB3C8DB629919146005115BA /* PanoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB529919146005115BA /* PanoError.swift */; };
 		BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB7299191E5005115BA /* Interactor.swift */; };
+		BB3C8DBB29919946005115BA /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DBA29919946005115BA /* VideoListViewModel.swift */; };
+		BB3C8DBE29919A30005115BA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DBD29919A30005115BA /* Lesson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		BB3C8DB329919076005115BA /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		BB3C8DB529919146005115BA /* PanoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoError.swift; sourceTree = "<group>"; };
 		BB3C8DB7299191E5005115BA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		BB3C8DBA29919946005115BA /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
+		BB3C8DBD29919A30005115BA /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +268,8 @@
 		BB3C8D772991728D005115BA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				BB3C8DBC29919A06005115BA /* Model */,
+				BB3C8DB929919935005115BA /* ViewModel */,
 				BB3C8D7829917293005115BA /* Coordinator */,
 			);
 			path = List;
@@ -325,6 +331,22 @@
 				BB3C8DB7299191E5005115BA /* Interactor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BB3C8DB929919935005115BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8DBA29919946005115BA /* VideoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB3C8DBC29919A06005115BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8DBD29919A30005115BA /* Lesson.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3C8DBE29919A30005115BA /* Lesson.swift in Sources */,
 				BB3C8D7C299172E3005115BA /* VideoListCoordinator.swift in Sources */,
 				BB3C8D7529917123005115BA /* ApplicationCoordinator.swift in Sources */,
 				BB3C8D81299188CE005115BA /* GlobalSettings.swift in Sources */,
@@ -494,6 +517,7 @@
 				BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */,
 				BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */,
 				BB3C8DB429919076005115BA /* Routes.swift in Sources */,
+				BB3C8DBB29919946005115BA /* VideoListViewModel.swift in Sources */,
 				BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */,
 				BB3C8DB629919146005115BA /* PanoError.swift in Sources */,
 				BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */,
