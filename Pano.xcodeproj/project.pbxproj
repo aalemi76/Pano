@@ -16,6 +16,7 @@
 		BB3C8D5B299168BA005115BA /* PanoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D5A299168BA005115BA /* PanoUITests.swift */; };
 		BB3C8D5D299168BA005115BA /* PanoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D5C299168BA005115BA /* PanoUITestsLaunchTests.swift */; };
 		BB3C8D6F29916C8C005115BA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C8D6E29916C8C005115BA /* Colors.xcassets */; };
+		BB3C8D7329917031005115BA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D7229917031005115BA /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BB3C8D5A299168BA005115BA /* PanoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoUITests.swift; sourceTree = "<group>"; };
 		BB3C8D5C299168BA005115BA /* PanoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BB3C8D6E29916C8C005115BA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BB3C8D7229917031005115BA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3C8D6D29916A44005115BA /* ApplicationFlow */,
+				BB3C8D7029917008005115BA /* Shared */,
 				BB3C8D69299168FB005115BA /* SupportingFiles */,
 				BB3C8D3D299168B9005115BA /* ViewController.swift */,
 			);
@@ -165,6 +168,22 @@
 				BB3C8D3B299168B9005115BA /* SceneDelegate.swift */,
 			);
 			path = ApplicationFlow;
+			sourceTree = "<group>";
+		};
+		BB3C8D7029917008005115BA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8D7129917014005115BA /* BaseCoordinatorProtocol */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BB3C8D7129917014005115BA /* BaseCoordinatorProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8D7229917031005115BA /* Coordinator.swift */,
+			);
+			path = BaseCoordinatorProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3C8D7329917031005115BA /* Coordinator.swift in Sources */,
 				BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */,
 				BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */,
 				BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */,
