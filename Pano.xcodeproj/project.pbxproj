@@ -42,6 +42,10 @@
 		BB3C8DA629918A9B005115BA /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3C8D9429918A9B005115BA /* Poppins-ExtraBoldItalic.ttf */; };
 		BB3C8DA929918D31005115BA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C8DA829918D31005115BA /* Alamofire */; };
 		BB3C8DAC29918DA5005115BA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C8DAB29918DA5005115BA /* SDWebImage */; };
+		BB3C8DB229918FD6005115BA /* InteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB129918FD6005115BA /* InteractorProtocol.swift */; };
+		BB3C8DB429919076005115BA /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB329919076005115BA /* Routes.swift */; };
+		BB3C8DB629919146005115BA /* PanoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB529919146005115BA /* PanoError.swift */; };
+		BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB7299191E5005115BA /* Interactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 		BB3C8D9229918A9B005115BA /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		BB3C8D9329918A9B005115BA /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
 		BB3C8D9429918A9B005115BA /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		BB3C8DB129918FD6005115BA /* InteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorProtocol.swift; sourceTree = "<group>"; };
+		BB3C8DB329919076005115BA /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		BB3C8DB529919146005115BA /* PanoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoError.swift; sourceTree = "<group>"; };
+		BB3C8DB7299191E5005115BA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,9 +234,13 @@
 		BB3C8D7029917008005115BA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB3C8DB029918FBE005115BA /* Interactor */,
+				BB3C8DAD29918EFF005115BA /* Managers */,
 				BB3C8D7D299187F4005115BA /* CustomViews */,
 				BB3C8D7129917014005115BA /* BaseCoordinatorProtocol */,
 				BB3C8D80299188CE005115BA /* GlobalSettings.swift */,
+				BB3C8DB329919076005115BA /* Routes.swift */,
+				BB3C8DB529919146005115BA /* PanoError.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -297,6 +309,22 @@
 				BB3C8D9029918A9B005115BA /* Poppins-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BB3C8DAD29918EFF005115BA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		BB3C8DB029918FBE005115BA /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8DB129918FD6005115BA /* InteractorProtocol.swift */,
+				BB3C8DB7299191E5005115BA /* Interactor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,8 +490,12 @@
 				BB3C8D7329917031005115BA /* Coordinator.swift in Sources */,
 				BB3C8D7F29918819005115BA /* PanoNavigationController.swift in Sources */,
 				BB3C8D7A299172AA005115BA /* VideoListCoordinatorProtocol.swift in Sources */,
+				BB3C8DB229918FD6005115BA /* InteractorProtocol.swift in Sources */,
 				BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */,
+				BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */,
+				BB3C8DB429919076005115BA /* Routes.swift in Sources */,
 				BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */,
+				BB3C8DB629919146005115BA /* PanoError.swift in Sources */,
 				BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
