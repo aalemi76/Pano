@@ -35,8 +35,12 @@ class ApplicationCoordinator: Coordinator {
     // MARK: - Methods
     
     func start() {
-        // Launch video list coordnator
+        let coorinator = VideoListCoordinator(type: .videoList, navigationController: navigationController)
+        coorinator.didFinish.sink { _ in
+            // TODO: - When the video list coordinator finishes!
+        }.store(in: &cancellableStorage)
+        childCoordinators.append(coorinator)
+        coorinator.start()
     }
-    
     
 }

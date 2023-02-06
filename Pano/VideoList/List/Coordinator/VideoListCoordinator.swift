@@ -35,7 +35,7 @@ class VideoListCoordinator: VideoListCoordinatorProtocol {
     // MARK: - Methods
     
     func start() {
-        return
+        navigationController.pushViewController(ViewController(), animated: true)
     }
     
     func showVideoDetail() {
