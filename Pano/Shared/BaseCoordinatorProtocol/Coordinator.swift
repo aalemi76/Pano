@@ -11,7 +11,7 @@ import Combine
 // MARK: - Coordinator Type Enum
 
 enum CoordinatorType {
-    case app
+    case app, videoList
 }
 
 // MARK: - Coordinator Protocol
