@@ -41,6 +41,7 @@
 		BB3C8DA529918A9B005115BA /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3C8D9329918A9B005115BA /* Poppins-BlackItalic.ttf */; };
 		BB3C8DA629918A9B005115BA /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB3C8D9429918A9B005115BA /* Poppins-ExtraBoldItalic.ttf */; };
 		BB3C8DA929918D31005115BA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C8DA829918D31005115BA /* Alamofire */; };
+		BB3C8DAC29918DA5005115BA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C8DAB29918DA5005115BA /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3C8DAC29918DA5005115BA /* SDWebImage in Frameworks */,
 				BB3C8DA929918D31005115BA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +317,7 @@
 			name = Pano;
 			packageProductDependencies = (
 				BB3C8DA829918D31005115BA /* Alamofire */,
+				BB3C8DAB29918DA5005115BA /* SDWebImage */,
 			);
 			productName = Pano;
 			productReference = BB3C8D36299168B9005115BA /* Pano.app */;
@@ -390,6 +393,7 @@
 			mainGroup = BB3C8D2D299168B9005115BA;
 			packageReferences = (
 				BB3C8DA729918D31005115BA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BB3C8DAA29918DA5005115BA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = BB3C8D37299168B9005115BA /* Products */;
 			projectDirPath = "";
@@ -824,6 +828,14 @@
 				minimumVersion = 5.6.1;
 			};
 		};
+		BB3C8DAA29918DA5005115BA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -831,6 +843,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB3C8DA729918D31005115BA /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		BB3C8DAB29918DA5005115BA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB3C8DAA29918DA5005115BA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
