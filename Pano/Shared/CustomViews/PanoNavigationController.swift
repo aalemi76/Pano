@@ -22,9 +22,9 @@ class PanoNavigationController: UINavigationController {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = GlobalSettings.shared.darkGray
         appearance.titleTextAttributes = [.foregroundColor: GlobalSettings.shared.purple ?? .white,
-                                          .font: GlobalSettings.shared.getFont(withType: .bold, ofSize: 15)]
+                                          .font: GlobalSettings.shared.getFont(withType: .bold, ofSize: 20)]
         appearance.largeTitleTextAttributes = [.foregroundColor: GlobalSettings.shared.purple ?? .white,
-                                               .font: GlobalSettings.shared.getFont(withType: .bold, ofSize: 18)]
+                                               .font: GlobalSettings.shared.getFont(withType: .bold, ofSize: 30)]
         navigationBar.tintColor = .white
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance

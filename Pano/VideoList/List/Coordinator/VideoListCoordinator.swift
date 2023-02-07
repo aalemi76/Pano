@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import Combine
 
 class VideoListCoordinator: VideoListCoordinatorProtocol {
@@ -35,10 +36,18 @@ class VideoListCoordinator: VideoListCoordinatorProtocol {
     // MARK: - Methods
     
     func start() {
-        navigationController.pushViewController(ViewController(), animated: true)
+        let interactor = Interactor()
+        let viewModel = VideoListViewModel(interactor: interactor)
+        let view = VideoListView(viewModel: viewModel)
+        view.didSelectLesson.sink { [weak self] lesson in
+            self?.showVideoDetail(for: lesson)
+        }.store(in: &cancellableStorage)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.pushViewController(UIHostingController(rootView: view), animated: true)
     }
     
-    func showVideoDetail() {
+    func showVideoDetail(for lesson: Lesson) {
+        print(lesson.name)
         return
     }
     

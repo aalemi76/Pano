@@ -48,6 +48,10 @@
 		BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DB7299191E5005115BA /* Interactor.swift */; };
 		BB3C8DBB29919946005115BA /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DBA29919946005115BA /* VideoListViewModel.swift */; };
 		BB3C8DBE29919A30005115BA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DBD29919A30005115BA /* Lesson.swift */; };
+		BB3C8DC129919D1B005115BA /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DC029919D1B005115BA /* VideoListView.swift */; };
+		BB3C8DC42991A9A9005115BA /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DC32991A9A9005115BA /* VideoCell.swift */; };
+		BB3C8DC72991ADC7005115BA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C8DC62991ADC7005115BA /* SDWebImageSwiftUI */; };
+		BB3C8DCA2991BE5E005115BA /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DC92991BE5E005115BA /* ViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,9 @@
 		BB3C8DB7299191E5005115BA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		BB3C8DBA29919946005115BA /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		BB3C8DBD29919A30005115BA /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		BB3C8DC029919D1B005115BA /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		BB3C8DC32991A9A9005115BA /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		BB3C8DC92991BE5E005115BA /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3C8DC72991ADC7005115BA /* SDWebImageSwiftUI in Frameworks */,
 				BB3C8DAC29918DA5005115BA /* SDWebImage in Frameworks */,
 				BB3C8DA929918D31005115BA /* Alamofire in Frameworks */,
 			);
@@ -238,6 +246,7 @@
 		BB3C8D7029917008005115BA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB3C8DC82991BE38005115BA /* ViewModel */,
 				BB3C8DB029918FBE005115BA /* Interactor */,
 				BB3C8DAD29918EFF005115BA /* Managers */,
 				BB3C8D7D299187F4005115BA /* CustomViews */,
@@ -268,6 +277,8 @@
 		BB3C8D772991728D005115BA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				BB3C8DC22991A976005115BA /* Cell */,
+				BB3C8DBF29919CA2005115BA /* View */,
 				BB3C8DBC29919A06005115BA /* Model */,
 				BB3C8DB929919935005115BA /* ViewModel */,
 				BB3C8D7829917293005115BA /* Coordinator */,
@@ -349,6 +360,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BB3C8DBF29919CA2005115BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8DC029919D1B005115BA /* VideoListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB3C8DC22991A976005115BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8DC32991A9A9005115BA /* VideoCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BB3C8DC82991BE38005115BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C8DC92991BE5E005115BA /* ViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +403,7 @@
 			packageProductDependencies = (
 				BB3C8DA829918D31005115BA /* Alamofire */,
 				BB3C8DAB29918DA5005115BA /* SDWebImage */,
+				BB3C8DC62991ADC7005115BA /* SDWebImageSwiftUI */,
 			);
 			productName = Pano;
 			productReference = BB3C8D36299168B9005115BA /* Pano.app */;
@@ -444,6 +480,7 @@
 			packageReferences = (
 				BB3C8DA729918D31005115BA /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BB3C8DAA29918DA5005115BA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				BB3C8DC52991ADC7005115BA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = BB3C8D37299168B9005115BA /* Products */;
 			projectDirPath = "";
@@ -514,10 +551,13 @@
 				BB3C8D7F29918819005115BA /* PanoNavigationController.swift in Sources */,
 				BB3C8D7A299172AA005115BA /* VideoListCoordinatorProtocol.swift in Sources */,
 				BB3C8DB229918FD6005115BA /* InteractorProtocol.swift in Sources */,
+				BB3C8DCA2991BE5E005115BA /* ViewModelProtocol.swift in Sources */,
+				BB3C8DC42991A9A9005115BA /* VideoCell.swift in Sources */,
 				BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */,
 				BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */,
 				BB3C8DB429919076005115BA /* Routes.swift in Sources */,
 				BB3C8DBB29919946005115BA /* VideoListViewModel.swift in Sources */,
+				BB3C8DC129919D1B005115BA /* VideoListView.swift in Sources */,
 				BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */,
 				BB3C8DB629919146005115BA /* PanoError.swift in Sources */,
 				BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */,
@@ -892,6 +932,14 @@
 				minimumVersion = 5.9.0;
 			};
 		};
+		BB3C8DC52991ADC7005115BA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -904,6 +952,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB3C8DAA29918DA5005115BA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		BB3C8DC62991ADC7005115BA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB3C8DC52991ADC7005115BA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

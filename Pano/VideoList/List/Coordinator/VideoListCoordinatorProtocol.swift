@@ -8,5 +8,5 @@
 import Foundation
 
 protocol VideoListCoordinatorProtocol: Coordinator {
-    func showVideoDetail()
+    func showVideoDetail(for lesson: Lesson)
 }

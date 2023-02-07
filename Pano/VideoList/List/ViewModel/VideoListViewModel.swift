@@ -7,21 +7,33 @@
 
 import Foundation
 
-final class VideoListViewModel: ObservableObject {
-    
-    @Published var lessons = []
+final class VideoListViewModel: ObservableObject, ViewModelProtocol {
+        
+    private var interactor: Interactor
+    @Published var lessons = [Lesson]()
     @Published var isFetching = false
+    @Published var error: PanoError?
     
-    private let interactor = Interactor()
+    init(interactor: Interactor) {
+        self.interactor = interactor
+    }
+
+    func viewDidLoad() {
+        getItems()
+    }
     
-    func getItems() {
+    private func getItems() {
         isFetching = true
-        interactor.getModel(.lessons) { [unowned self] (lessons: [Lesson]) in
-            self.isFetching = false
-            self.lessons.append(contentsOf: lessons)
-        } onFailure: { error in
-            self.isFetching = false
-            print(error.rawValue)
+        interactor.getModel(.lessons) { [weak self] (lessons: Lessons) in
+            DispatchQueue.main.async {
+                self?.isFetching = false
+                self?.lessons.append(contentsOf: lessons.lessons)
+            }
+        } onFailure: { [weak self] error in
+            DispatchQueue.main.async {
+                self?.isFetching = false
+                self?.error = error
+            }
         }
 
     }
