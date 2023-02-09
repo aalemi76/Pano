@@ -36,7 +36,7 @@ class VideoListCoordinator: VideoListCoordinatorProtocol {
     // MARK: - Methods
     
     func start() {
-        let interactor = Interactor()
+        let interactor = VideoListInteractor()
         let viewModel = VideoListViewModel(interactor: interactor)
         let view = VideoListView(viewModel: viewModel)
         view.didSelectLesson.sink { [weak self] lesson in

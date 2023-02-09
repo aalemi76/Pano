@@ -9,11 +9,14 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct VideoCell: View {
-    let model: Lesson
+    var model: Lesson
     
     var body: some View {
         HStack(spacing: 3) {
             WebImage(url: URL(string: model.thumbnail))
+                .onSuccess { image, data, cacheType in
+                    
+                }
                 .resizable()
                 .frame(width: 120, height: 90, alignment: .center)
                 .cornerRadius(5)

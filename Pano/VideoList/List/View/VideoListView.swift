@@ -31,7 +31,7 @@ struct VideoListView: View {
 
 struct VideoListViewPreviews: PreviewProvider {
     static var previews: some View {
-        let interactor = Interactor()
+        let interactor = VideoListInteractor()
         let viewModel = VideoListViewModel(interactor: interactor)
         VideoListView(viewModel: viewModel)
     }

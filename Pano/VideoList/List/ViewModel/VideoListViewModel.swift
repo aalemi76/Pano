@@ -8,14 +8,14 @@
 import Foundation
 
 final class VideoListViewModel: ObservableObject, ViewModelProtocol {
-        
-    private var interactor: Interactor
+    
+    private var interactor: VideoListInteractor
     @Published var lessons = [Lesson]()
     @Published var isFetching = false
     @Published var error: PanoError?
     
-    init(interactor: Interactor) {
-        self.interactor = interactor
+    init(interactor: any InteractorProtocol) {
+        self.interactor = interactor as! VideoListInteractor
     }
 
     func viewDidLoad() {

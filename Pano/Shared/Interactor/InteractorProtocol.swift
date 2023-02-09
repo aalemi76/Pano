@@ -9,13 +9,15 @@ import Alamofire
 
 protocol InteractorProtocol {
     
-    func getModel< Model: Codable >(_ route: Routes,
-                                    method: HTTPMethod,
-                                    parameters: [String: Any]?,
-                                    encoding: URLEncoding,
-                                    headers: HTTPHeaders?,
-                                    onSuccess: @escaping (Model) -> Void,
-                                    onFailure: @escaping (PanoError) -> Void)
+    associatedtype Model: Codable
+    
+    func getModel(_ route: Routes,
+                  method: HTTPMethod,
+                  parameters: [String: Any]?,
+                  encoding: URLEncoding,
+                  headers: HTTPHeaders?,
+                  onSuccess: @escaping (Model) -> Void,
+                  onFailure: @escaping (PanoError) -> Void)
     
     
 }
