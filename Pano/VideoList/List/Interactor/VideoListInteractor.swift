@@ -32,6 +32,7 @@ class VideoListInteractor: InteractorProtocol {
     }
     
     func getModel(_ route: Routes,
+                  urlString: String? = nil,
                   method: Alamofire.HTTPMethod = .get,
                   parameters: [String : Any]? = nil,
                   encoding: Alamofire.URLEncoding = .queryString,

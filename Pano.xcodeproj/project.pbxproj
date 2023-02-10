@@ -76,6 +76,7 @@
 		BBA161CC2996C96000ECF001 /* NextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161CA2996C96000ECF001 /* NextTableViewCell.swift */; };
 		BBA161CD2996C96000ECF001 /* NextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA161CB2996C96000ECF001 /* NextTableViewCell.xib */; };
 		BBA161CF2996CA5900ECF001 /* NextTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161CE2996CA5900ECF001 /* NextTableCellViewModel.swift */; };
+		BBA161D22996E30100ECF001 /* VideoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161D12996E30100ECF001 /* VideoDetailInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,7 @@
 		BBA161CA2996C96000ECF001 /* NextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTableViewCell.swift; sourceTree = "<group>"; };
 		BBA161CB2996C96000ECF001 /* NextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextTableViewCell.xib; sourceTree = "<group>"; };
 		BBA161CE2996CA5900ECF001 /* NextTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTableCellViewModel.swift; sourceTree = "<group>"; };
+		BBA161D12996E30100ECF001 /* VideoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +460,7 @@
 		BBA161992995B4DE00ECF001 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BBA161D02996E2C900ECF001 /* Interactor */,
 				BBA161BB2995E5A800ECF001 /* Cells */,
 				BBA161B42995D2B900ECF001 /* ViewModel */,
 				BBA1619A2995B4E600ECF001 /* Controller */,
@@ -526,6 +529,14 @@
 				BBA161CB2996C96000ECF001 /* NextTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BBA161D02996E2C900ECF001 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BBA161D12996E30100ECF001 /* VideoDetailInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -701,6 +712,7 @@
 				BBA161A52995CC1600ECF001 /* TableViewProvider+UITableViewDataSource.swift in Sources */,
 				BB3C8D7F29918819005115BA /* PanoNavigationController.swift in Sources */,
 				BBA161982995A77100ECF001 /* DiskManager.swift in Sources */,
+				BBA161D22996E30100ECF001 /* VideoDetailInteractor.swift in Sources */,
 				BB3C8D7A299172AA005115BA /* VideoListCoordinatorProtocol.swift in Sources */,
 				BB3C8DB229918FD6005115BA /* InteractorProtocol.swift in Sources */,
 				BBA161A32995CBF300ECF001 /* TableViewProvider+UITableViewDelegate.swift in Sources */,

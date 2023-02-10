@@ -30,7 +30,7 @@ class PlayerTableViewCell: UITableViewCell, Updatable {
     }
     
     func update(model: Any) {
-        guard let urlString = (model as? Lesson)?.videoURL, let url = URL(string: urlString) else { return }
+        guard let urlString = model as? String, let url = URL(string: urlString) else { return }
         player.pause()
         player = AVPlayer(url: url)
         playerViewController.player = player

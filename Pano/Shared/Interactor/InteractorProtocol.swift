@@ -12,6 +12,7 @@ protocol InteractorProtocol {
     associatedtype Model: Codable
     
     func getModel(_ route: Routes,
+                  urlString: String?,
                   method: HTTPMethod,
                   parameters: [String: Any]?,
                   encoding: URLEncoding,

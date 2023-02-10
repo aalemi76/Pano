@@ -10,6 +10,7 @@ import Foundation
 enum Routes: String {
     
     case lessons = "lessons"
+    case videoURL
     
     var baseURL: String {
         get {
@@ -19,5 +20,9 @@ enum Routes: String {
     
     func getURL() -> String {
         return "\(self.baseURL)/\(self.rawValue)"
+    }
+    
+    func getVideoURL(forLesson lesson: Lesson) -> String {
+        return lesson.videoURL
     }
 }

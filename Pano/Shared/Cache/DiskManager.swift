@@ -9,10 +9,13 @@ import Foundation
 
 enum DocumentDirectory {
     case cache(id: String)
+    case library(id: Int)
     func getPath() -> URL {
         switch self {
         case .cache(let id):
             return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0].appendingPathExtension(id + ".cache")
+        case .library(let id):
+            return FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0].appendingPathExtension("\(id)" + ".mp4")
         }
     }
 }
@@ -31,9 +34,15 @@ class DiskManager {
                 if FileManager.default.fileExists(atPath: path.absoluteString) {
                     try FileManager.default.removeItem(atPath: path.absoluteString)
                 }
-                let data = try JSONEncoder().encode(object)
-                try data.write(to: path)
-                onSuccess(true)
+                
+                if let data = object as? Data {
+                    try data.write(to: path)
+                    onSuccess(true)
+                } else {
+                    let data = try JSONEncoder().encode(object)
+                    try data.write(to: path)
+                    onSuccess(true)
+                }
             } catch {
                 onFailure(error)
             }

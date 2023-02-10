@@ -7,11 +7,32 @@
 
 import Foundation
 import Combine
+import Alamofire
+
+enum DownloadState: String {
+    case downloaded = ""
+    case download = "icloud.and.arrow.down"
+    case downloading = "stop.circle"
+    case resume = "play.circle"
+}
 
 class VideoDetailViewModel: ViewModelProtocol {
     
+    var interactor = VideoDetailInteractor()
+    
     var lessons: [Lesson]
     var currentIndex: Int
+    private var downloadState: DownloadState {
+        didSet {
+            (view as? VideoDetailViewController)?.didChangeDownloadState(downloadState)
+        }
+    }
+    
+    private var progress: Float = 0 {
+        didSet {
+            (view as? VideoDetailViewController)?.didChangeProgress(progress)
+        }
+    }
     
     weak var view: Viewable?
     
@@ -20,12 +41,16 @@ class VideoDetailViewModel: ViewModelProtocol {
     init(lessons: [Lesson], currentIndex: Int) {
         self.lessons = lessons
         self.currentIndex = currentIndex
+        downloadState = .download
     }
     
     func viewDidLoad(_ view: Viewable?) {
         self.view = view
         let sections = createSections()
         view?.show(result: .success(sections))
+        (view as? VideoDetailViewController)?.didTapOnDownload.sink(receiveValue: { [weak self] _ in
+            self?.downloadVideo()
+        }).store(in: &cancellableStorage)
     }
     
     func loadNextLesson() {
@@ -38,14 +63,56 @@ class VideoDetailViewModel: ViewModelProtocol {
         view?.show(result: .success(sections))
     }
     
+    func downloadVideo() {
+        switch downloadState {
+        case .download:
+            downloadState = .downloading
+            let urlString = lessons[currentIndex].videoURL
+            interactor.getModel(.videoURL, urlString: urlString) { [weak self] progress in
+                if progress == 1 {
+                    self?.downloadState = .downloaded
+                }
+                self?.progress = Float(progress)
+            } onFailure: { error in
+                print(error)
+            }
+        case .downloading:
+            downloadState = .resume
+            interactor.cancelDownload()
+        case .resume:
+            downloadState = .downloading
+            interactor.getModel(.videoURL, urlString: nil) { [weak self] progress in
+                if progress == 1 {
+                    self?.downloadState = .downloaded
+                }
+                self?.progress = Float(progress)
+            } onFailure: { error in
+                print(error)
+            }
+        default:
+            return
+        }
+    }
+    
     func createSections() -> [Sectionable] {
         
         let lesson = lessons[currentIndex]
+        interactor.id = lesson.id
+        
+        var urlString: String
+        
+        if let url = interactor.loadVideo() {
+            urlString = url.absoluteString
+            downloadState = .downloaded
+        } else {
+            urlString = lesson.videoURL
+            downloadState = .download
+        }
         
         let player = SectionProvider(title: nil,
                                      cells: [SharedCellViewModel(reuseID: PlayerTableViewCell.reuseID,
-                                                                cellClass: PlayerTableViewCell.self,
-                                                                model: lesson)],
+                                                                 cellClass: PlayerTableViewCell.self,
+                                                                 model: urlString)],
                                      headerView: nil,
                                      footerView: nil)
         

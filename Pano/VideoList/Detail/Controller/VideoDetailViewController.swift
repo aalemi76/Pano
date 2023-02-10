@@ -12,6 +12,20 @@ class VideoDetailViewController: UIViewController {
     
     private let viewModel: VideoDetailViewModel
     
+    private lazy var progressView: UIProgressView = {
+        let progressView = UIProgressView()
+        progressView.backgroundColor = GlobalSettings.shared.darkGray
+        progressView.tintColor = GlobalSettings.shared.purple
+        progressView.frame = .zero
+        return progressView
+    }()
+    
+    private lazy var barButton: UIBarButtonItem = {
+        return UIBarButtonItem(image: UIImage(systemName: "icloud.and.arrow.down"),
+                               style: .plain, target: self,
+                               action: #selector(barButtonItemDidTap))
+    }()
+    
     init(viewModel: VideoDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -63,12 +77,35 @@ class VideoDetailViewController: UIViewController {
         willDisappear.send(true)
     }
     
+    func didChangeDownloadState(_ state: DownloadState) {
+        DispatchQueue.main.async {[weak self] in
+            let button = self?.navigationItem.rightBarButtonItem
+            button?.image = UIImage(systemName: state.rawValue)
+        }
+    }
+    
+    func didChangeProgress(_ progress: Float) {
+        DispatchQueue.main.async {[weak self] in
+            self?.progressView.isHidden = !(progress < 1)
+            self?.progressView.progress = progress
+        }
+    }
+    
     private func setupLayout() {
         view.backgroundColor = GlobalSettings.shared.darkGray
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(progressView)
+        NSLayoutConstraint.activate([
+            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            progressView.heightAnchor.constraint(equalToConstant: 5)
+        ])
+        progressView.isHidden = true
         tableViewProvider.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableViewProvider)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: progressView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
