@@ -16,15 +16,14 @@ struct VideoListView: View {
     
     var body: some View {
         ZStack {
-            NavigationView {
-                List(viewModel.lessons, id: \.id) { lesson in
-                    VideoCell(model: lesson).onTapGesture {
-                        didSelectLesson.send(lesson)
-                    }
-                }.listStyle(.plain)
-                    .background(Color("darkGray"))
-            }.navigationTitle("Lessons")
-                .onAppear { viewModel.viewDidLoad() }
+            List(viewModel.lessons, id: \.id) { lesson in
+                VideoCell(model: lesson).onTapGesture {
+                    didSelectLesson.send(lesson)
+                }
+            }.listStyle(.plain)
+                .background(Color("darkGray"))
+        }.onAppear {
+            viewModel.viewDidLoad()
         }
     }
 }

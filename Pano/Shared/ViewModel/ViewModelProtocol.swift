@@ -8,7 +8,5 @@
 import Foundation
 
 protocol ViewModelProtocol {
-    init(interactor: any InteractorProtocol)
     func viewDidLoad()
-    
 }

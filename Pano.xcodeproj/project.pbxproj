@@ -55,6 +55,8 @@
 		BB3C8DC72991ADC7005115BA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB3C8DC62991ADC7005115BA /* SDWebImageSwiftUI */; };
 		BB3C8DCA2991BE5E005115BA /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8DC92991BE5E005115BA /* ViewModelProtocol.swift */; };
 		BBA161982995A77100ECF001 /* DiskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161972995A77100ECF001 /* DiskManager.swift */; };
+		BBA1619C2995B50400ECF001 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1619B2995B50400ECF001 /* VideoDetailViewController.swift */; };
+		BBA1619E2995B98000ECF001 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1619D2995B98000ECF001 /* VideoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		BB3C8DC32991A9A9005115BA /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		BB3C8DC92991BE5E005115BA /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		BBA161972995A77100ECF001 /* DiskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskManager.swift; sourceTree = "<group>"; };
+		BBA1619B2995B50400ECF001 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		BBA1619D2995B98000ECF001 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +288,7 @@
 		BB3C8D762991727E005115BA /* VideoList */ = {
 			isa = PBXGroup;
 			children = (
+				BBA161992995B4DE00ECF001 /* Detail */,
 				BB3C8D772991728D005115BA /* List */,
 			);
 			path = VideoList;
@@ -379,6 +384,7 @@
 		BB3C8DBF29919CA2005115BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBA1619D2995B98000ECF001 /* VideoListViewController.swift */,
 				BB3C8DC029919D1B005115BA /* VideoListView.swift */,
 			);
 			path = View;
@@ -407,6 +413,22 @@
 				BBA161972995A77100ECF001 /* DiskManager.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		BBA161992995B4DE00ECF001 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BBA1619A2995B4E600ECF001 /* Controller */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BBA1619A2995B4E600ECF001 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBA1619B2995B50400ECF001 /* VideoDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,7 +610,9 @@
 				BB3C8DC129919D1B005115BA /* VideoListView.swift in Sources */,
 				BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */,
 				BB3C8DB629919146005115BA /* PanoError.swift in Sources */,
+				BBA1619E2995B98000ECF001 /* VideoListViewController.swift in Sources */,
 				BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */,
+				BBA1619C2995B50400ECF001 /* VideoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

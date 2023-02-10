@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PanoNavigationController: UINavigationController {
+class PanoNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -15,7 +15,9 @@ class PanoNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = GlobalSettings.shared.darkGray
         setupNavigationStyles()
+        interactivePopGestureRecognizer?.delegate = self
     }
     
     func setupNavigationStyles() {
@@ -25,12 +27,15 @@ class PanoNavigationController: UINavigationController {
                                           .font: GlobalSettings.shared.getFont(withType: .bold, ofSize: 20)]
         appearance.largeTitleTextAttributes = [.foregroundColor: GlobalSettings.shared.purple ?? .white,
                                                .font: GlobalSettings.shared.getFont(withType: .bold, ofSize: 30)]
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = GlobalSettings.shared.purple
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
     }
     
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
+    }
     
     
 }
