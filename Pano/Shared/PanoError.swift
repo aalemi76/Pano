@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PanoError: String {
+enum PanoError: String, Error {
     case networkIsNotReachable = "Ooops...! Device seems to be offline!"
     case somethingGoesWrong = "Ooops...! Something goes wrong!"
     case notCachedYet = "Ooops...! Items have not been cached before!"

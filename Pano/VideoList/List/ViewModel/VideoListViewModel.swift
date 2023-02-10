@@ -19,7 +19,7 @@ final class VideoListViewModel: ObservableObject, ViewModelProtocol {
         self.interactor = interactor as! VideoListInteractor
     }
 
-    func viewDidLoad() {
+    func viewDidLoad(_ view: Viewable? = nil) {
         getItems()
     }
     

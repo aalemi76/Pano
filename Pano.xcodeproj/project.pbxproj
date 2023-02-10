@@ -67,6 +67,7 @@
 		BBA161B12995CDFF00ECF001 /* Sectionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B02995CDFF00ECF001 /* Sectionable.swift */; };
 		BBA161B32995CEC100ECF001 /* TableViewProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B22995CEC100ECF001 /* TableViewProviderProtocol.swift */; };
 		BBA161B62995D2CE00ECF001 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */; };
+		BBA161B82995D7D100ECF001 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B72995D7D100ECF001 /* Viewable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		BBA161B02995CDFF00ECF001 /* Sectionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sectionable.swift; sourceTree = "<group>"; };
 		BBA161B22995CEC100ECF001 /* TableViewProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderProtocol.swift; sourceTree = "<group>"; };
 		BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
+		BBA161B72995D7D100ECF001 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3C8D7E29918819005115BA /* PanoNavigationController.swift */,
+				BBA161B72995D7D100ECF001 /* Viewable.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 			files = (
 				BB3C8DBE29919A30005115BA /* Lesson.swift in Sources */,
 				BB3C8D7C299172E3005115BA /* VideoListCoordinator.swift in Sources */,
+				BBA161B82995D7D100ECF001 /* Viewable.swift in Sources */,
 				BB3C8D7529917123005115BA /* ApplicationCoordinator.swift in Sources */,
 				BB3C8D81299188CE005115BA /* GlobalSettings.swift in Sources */,
 				BB3C8D7329917031005115BA /* Coordinator.swift in Sources */,

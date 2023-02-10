@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ViewModelProtocol {
-    func viewDidLoad()
+    func viewDidLoad(_ view: Viewable?)
 }

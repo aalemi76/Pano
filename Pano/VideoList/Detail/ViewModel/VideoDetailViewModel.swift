@@ -12,14 +12,15 @@ class VideoDetailViewModel: ViewModelProtocol {
     var lessons: [Lesson]
     var currentIndex: Int
     
+    weak var view: Viewable?
+    
     init(lessons: [Lesson], currentIndex: Int) {
         self.lessons = lessons
         self.currentIndex = currentIndex
     }
     
-    func viewDidLoad() {
-        let sections = createSections()
-        return
+    func viewDidLoad(_ view: Viewable?) {
+        self.view = view
     }
     
     func loadNextLesson() -> [Sectionable] {
