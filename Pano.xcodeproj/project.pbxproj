@@ -66,6 +66,7 @@
 		BBA161AF2995CD9400ECF001 /* SharedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161AE2995CD9400ECF001 /* SharedCellViewModel.swift */; };
 		BBA161B12995CDFF00ECF001 /* Sectionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B02995CDFF00ECF001 /* Sectionable.swift */; };
 		BBA161B32995CEC100ECF001 /* TableViewProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B22995CEC100ECF001 /* TableViewProviderProtocol.swift */; };
+		BBA161B62995D2CE00ECF001 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		BBA161AE2995CD9400ECF001 /* SharedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCellViewModel.swift; sourceTree = "<group>"; };
 		BBA161B02995CDFF00ECF001 /* Sectionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sectionable.swift; sourceTree = "<group>"; };
 		BBA161B22995CEC100ECF001 /* TableViewProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderProtocol.swift; sourceTree = "<group>"; };
+		BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +439,7 @@
 		BBA161992995B4DE00ECF001 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BBA161B42995D2B900ECF001 /* ViewModel */,
 				BBA1619A2995B4E600ECF001 /* Controller */,
 			);
 			path = Detail;
@@ -480,6 +483,14 @@
 				BBA161AE2995CD9400ECF001 /* SharedCellViewModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		BBA161B42995D2B900ECF001 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -671,6 +682,7 @@
 				BBA161B12995CDFF00ECF001 /* Sectionable.swift in Sources */,
 				BBA161A72995CD0A00ECF001 /* SectionProvider.swift in Sources */,
 				BBA1619E2995B98000ECF001 /* VideoListViewController.swift in Sources */,
+				BBA161B62995D2CE00ECF001 /* VideoDetailViewModel.swift in Sources */,
 				BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */,
 				BBA1619C2995B50400ECF001 /* VideoDetailViewController.swift in Sources */,
 			);
