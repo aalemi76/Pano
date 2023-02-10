@@ -40,15 +40,17 @@ class VideoListCoordinator: VideoListCoordinatorProtocol {
         let contentView = UIHostingController(rootView: view)
         let viewController = VideoListViewController(contentView: contentView)
         viewController.title = "Lessons"
-        view.didSelectLesson.sink { [weak self] lesson in
-            self?.showVideoDetail(for: lesson)
+        view.didSelectLesson.sink { [weak self] lessons, index in
+            self?.showVideoDetail(for: lessons, index: index)
         }.store(in: &cancellableStorage)
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showVideoDetail(for lesson: Lesson) {
-        let viewController = VideoDetailViewController()
+    func showVideoDetail(for lessons: [Lesson], index: Int?) {
+        guard let index = index else { return }
+        let viewModel = VideoDetailViewModel(lessons: lessons, currentIndex: index)
+        let viewController = VideoDetailViewController(viewModel: viewModel)
         viewController.willDisappear.sink { [weak self] _ in
             self?.navigationController.navigationBar.prefersLargeTitles = true
         }.store(in: &cancellableStorage)

@@ -12,13 +12,14 @@ struct VideoListView: View {
     
     @StateObject var viewModel: VideoListViewModel
     
-    var didSelectLesson = PassthroughSubject<Lesson, Never>()
+    var didSelectLesson = PassthroughSubject<([Lesson], Int?), Never>()
     
     var body: some View {
         ZStack {
             List(viewModel.lessons, id: \.id) { lesson in
                 VideoCell(model: lesson).onTapGesture {
-                    didSelectLesson.send(lesson)
+                    let index = viewModel.lessons.firstIndex(of: lesson)
+                    didSelectLesson.send((viewModel.lessons, index))
                 }
             }.listStyle(.plain)
                 .background(Color("darkGray"))

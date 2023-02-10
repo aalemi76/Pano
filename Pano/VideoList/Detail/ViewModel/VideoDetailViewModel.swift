@@ -21,11 +21,14 @@ class VideoDetailViewModel: ViewModelProtocol {
     
     func viewDidLoad(_ view: Viewable?) {
         self.view = view
+//        let sections = createSections()
+//        view?.show(result: .success(sections))
     }
     
-    func loadNextLesson() -> [Sectionable] {
+    func loadNextLesson() {
         currentIndex += 1
-        return createSections()
+        let sections = createSections()
+        view?.show(result: .success(sections))
     }
     
     func createSections() -> [Sectionable] {

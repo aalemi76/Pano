@@ -68,6 +68,7 @@
 		BBA161B32995CEC100ECF001 /* TableViewProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B22995CEC100ECF001 /* TableViewProviderProtocol.swift */; };
 		BBA161B62995D2CE00ECF001 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */; };
 		BBA161B82995D7D100ECF001 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B72995D7D100ECF001 /* Viewable.swift */; };
+		BBA161BA2995D9B800ECF001 /* VideoDetailViewController+Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161B92995D9B800ECF001 /* VideoDetailViewController+Viewable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		BBA161B22995CEC100ECF001 /* TableViewProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderProtocol.swift; sourceTree = "<group>"; };
 		BBA161B52995D2CE00ECF001 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
 		BBA161B72995D7D100ECF001 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
+		BBA161B92995D9B800ECF001 /* VideoDetailViewController+Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoDetailViewController+Viewable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA1619B2995B50400ECF001 /* VideoDetailViewController.swift */,
+				BBA161B92995D9B800ECF001 /* VideoDetailViewController+Viewable.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */,
 				BB3C8DB629919146005115BA /* PanoError.swift in Sources */,
 				BBA161B32995CEC100ECF001 /* TableViewProviderProtocol.swift in Sources */,
+				BBA161BA2995D9B800ECF001 /* VideoDetailViewController+Viewable.swift in Sources */,
 				BBA161B12995CDFF00ECF001 /* Sectionable.swift in Sources */,
 				BBA161A72995CD0A00ECF001 /* SectionProvider.swift in Sources */,
 				BBA1619E2995B98000ECF001 /* VideoListViewController.swift in Sources */,
