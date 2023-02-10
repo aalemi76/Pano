@@ -11,7 +11,7 @@ import Combine
 class VideoDetailViewController: UIViewController {
     
     private let viewModel: VideoDetailViewModel
-
+    
     init(viewModel: VideoDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -31,6 +31,8 @@ class VideoDetailViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 150
         tableView.separatorColor = .none
+        tableView.sectionHeaderHeight = 0
+        tableView.sectionFooterHeight = 0
         tableView.tableHeaderView = nil
         tableView.tableFooterView = nil
         return tableView
@@ -53,7 +55,7 @@ class VideoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-//        viewModel.viewDidLoad(self)
+        viewModel.viewDidLoad(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
