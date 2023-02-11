@@ -18,10 +18,10 @@ enum DownloadState: String {
 
 class VideoDetailViewModel: ViewModelProtocol {
     
-    var interactor = VideoDetailInteractor()
+    private var interactor = VideoDetailInteractor()
     
-    var lessons: [Lesson]
-    var currentIndex: Int
+    private var lessons: [Lesson]
+    private var currentIndex: Int
     private var downloadState: DownloadState {
         didSet {
             (view as? VideoDetailViewController)?.didChangeDownloadState(downloadState)
@@ -34,7 +34,7 @@ class VideoDetailViewModel: ViewModelProtocol {
         }
     }
     
-    weak var view: Viewable?
+    private weak var view: Viewable?
     
     private var cancellableStorage = Set<AnyCancellable>()
     
@@ -53,7 +53,7 @@ class VideoDetailViewModel: ViewModelProtocol {
         }).store(in: &cancellableStorage)
     }
     
-    func loadNextLesson() {
+    private func loadNextLesson() {
         if currentIndex >= lessons.count - 1 {
             currentIndex = 0
         } else {
@@ -63,7 +63,13 @@ class VideoDetailViewModel: ViewModelProtocol {
         view?.show(result: .success(sections))
     }
     
-    func downloadVideo() {
+    private func didTapOnNextButton(cellViewModel: NextTableCellViewModel) {
+        cellViewModel.didTapOnNextButton.sink { [weak self] _ in
+            self?.loadNextLesson()
+        }.store(in: &cancellableStorage)
+    }
+    
+    private func downloadVideo() {
         switch downloadState {
         case .download:
             downloadState = .downloading
@@ -73,30 +79,29 @@ class VideoDetailViewModel: ViewModelProtocol {
                     self?.downloadState = .downloaded
                 }
                 self?.progress = Float(progress)
-            } onFailure: { error in
-                print(error)
+            } onFailure: { [weak self] error in
+                self?.view?.show(result: .failure(error))
             }
         case .downloading:
             downloadState = .resume
             interactor.cancelDownload()
         case .resume:
             downloadState = .downloading
-            interactor.getModel(.videoURL, urlString: nil) { [weak self] progress in
+            interactor.resumeDownload { [weak self] progress in
                 if progress == 1 {
                     self?.downloadState = .downloaded
                 }
                 self?.progress = Float(progress)
-            } onFailure: { error in
-                print(error)
+            } onFailure: { [weak self] error in
+                self?.view?.show(result: .failure(error))
             }
         default:
             return
         }
     }
     
-    func createSections() -> [Sectionable] {
+    private func checkLessonState(_ lesson: Lesson) -> String {
         
-        let lesson = lessons[currentIndex]
         interactor.id = lesson.id
         
         var urlString: String
@@ -108,6 +113,16 @@ class VideoDetailViewModel: ViewModelProtocol {
             urlString = lesson.videoURL
             downloadState = .download
         }
+        
+        return urlString
+        
+    }
+    
+    private func createSections() -> [Sectionable] {
+        
+        let lesson = lessons[currentIndex]
+        
+        let urlString = checkLessonState(lesson)
         
         let player = SectionProvider(title: nil,
                                      cells: [SharedCellViewModel(reuseID: PlayerTableViewCell.reuseID,
@@ -135,11 +150,5 @@ class VideoDetailViewModel: ViewModelProtocol {
         let nextCell = SectionProvider(title: nil, cells: [nextButtonViewModel], headerView: nil, footerView: nil)
         
         return [player, title, description, nextCell]
-    }
-    
-    func didTapOnNextButton(cellViewModel: NextTableCellViewModel) {
-        cellViewModel.didTapOnNextButton.sink { [weak self] _ in
-            self?.loadNextLesson()
-        }.store(in: &cancellableStorage)
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class VideoDetailViewController: UIViewController {
+class VideoDetailViewController: SharedViewController {
     
     private let viewModel: VideoDetailViewModel
     

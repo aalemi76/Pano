@@ -25,7 +25,7 @@ struct VideoListView: View {
                 .background(Color("darkGray"))
         }.onAppear {
             viewModel.viewDidLoad()
-        }
+        }.background(Color("darkGray"))
     }
 }
 

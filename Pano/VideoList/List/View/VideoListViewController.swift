@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class VideoListViewController: UIViewController {
+class VideoListViewController: SharedViewController {
     let contentView: UIHostingController<VideoListView>
     
     init(contentView: UIHostingController<VideoListView>) {

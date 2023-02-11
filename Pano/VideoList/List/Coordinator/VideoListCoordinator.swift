@@ -38,6 +38,7 @@ class VideoListCoordinator: VideoListCoordinatorProtocol {
     func start() {
         let view = VideoListView(viewModel: VideoListViewModel(interactor: VideoListInteractor()))
         let contentView = UIHostingController(rootView: view)
+        contentView.view.backgroundColor = GlobalSettings.shared.darkGray
         let viewController = VideoListViewController(contentView: contentView)
         viewController.title = "Lessons"
         view.didSelectLesson.sink { [weak self] lessons, index in

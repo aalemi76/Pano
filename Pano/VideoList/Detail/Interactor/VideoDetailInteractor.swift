@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class VideoDetailInteractor: InteractorProtocol {
-   
+    
     typealias Model = Double
     
     var download: DownloadRequest?
@@ -28,7 +28,7 @@ class VideoDetailInteractor: InteractorProtocol {
             print(error)
             onFailure(.saveVideoError)
         }
-
+        
         
     }
     
@@ -39,7 +39,7 @@ class VideoDetailInteractor: InteractorProtocol {
         } else {
             return nil
         }
-
+        
     }
     
     func cancelDownload() {
@@ -57,39 +57,42 @@ class VideoDetailInteractor: InteractorProtocol {
                   onSuccess: @escaping (Double) -> Void,
                   onFailure: @escaping (PanoError) -> Void) {
         
-        let progressQueue = DispatchQueue(label: "com.alamofire.progressQueue", qos: .utility)
+        guard let urlString = urlString  else { return }
         
-        if let urlString = urlString {
-            download = AF.download(urlString)
-                .downloadProgress(queue: progressQueue) { progress in
-                    onSuccess(progress.fractionCompleted)
+        let progressQueue = DispatchQueue(label: "com.alamofire.progressQueue", qos: .utility)
+        download = AF.download(urlString)
+            .downloadProgress(queue: progressQueue) { progress in
+                onSuccess(progress.fractionCompleted)
+            }
+            .responseData { [weak self] response in
+                if let data = response.value {
+                    self?.data = data
+                    self?.saveVideo(data: data, onSuccess: {
+                        
+                    }, onFailure: { error in
+                        onFailure(error)
+                    })
                 }
-                .responseData { [weak self] response in
-                    if let data = response.value {
-                        self?.data = data
-                        self?.saveVideo(data: data, onSuccess: {
-                            
-                        }, onFailure: { error in
-                            onFailure(error)
-                        })
-                    }
+            }
+    }
+    
+    func resumeDownload(onSuccess: @escaping (Double) -> Void,
+                        onFailure: @escaping (PanoError) -> Void) {
+        let progressQueue = DispatchQueue(label: "com.alamofire.progressQueue", qos: .utility)
+        guard let data = data else { return }
+        download = AF.download(resumingWith: data)
+            .downloadProgress(queue: progressQueue) {progress in
+                onSuccess(progress.fractionCompleted)
+            }.responseData { [weak self] response in
+                if let data = response.value {
+                    self?.data = data
+                    self?.saveVideo(data: data, onSuccess: {
+                        
+                    }, onFailure: { error in
+                        onFailure(error)
+                    })
                 }
-        } else if let data = data {
-            download = AF.download(resumingWith: data)
-                .downloadProgress(queue: progressQueue) {progress in
-                    onSuccess(progress.fractionCompleted)
-                }
-                .responseData { [weak self] response in
-                    if let data = response.value {
-                        self?.data = data
-                        self?.saveVideo(data: data, onSuccess: {
-                            
-                        }, onFailure: { error in
-                            onFailure(error)
-                        })
-                    }
-                }
-        }
+            }
     }
     
     

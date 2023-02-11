@@ -15,7 +15,7 @@ extension VideoDetailViewController: Viewable {
             guard let sections = sections as? [Sectionable] else { return }
             tableViewProvider.load(sections)
         case .failure(let error):
-            print(error.localizedDescription)
+            showErrorBanner(title: error.localizedDescription)
         }
     }
     

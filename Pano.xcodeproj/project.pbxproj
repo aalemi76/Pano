@@ -77,6 +77,8 @@
 		BBA161CD2996C96000ECF001 /* NextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA161CB2996C96000ECF001 /* NextTableViewCell.xib */; };
 		BBA161CF2996CA5900ECF001 /* NextTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161CE2996CA5900ECF001 /* NextTableCellViewModel.swift */; };
 		BBA161D22996E30100ECF001 /* VideoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161D12996E30100ECF001 /* VideoDetailInteractor.swift */; };
+		BBA161D4299722B900ECF001 /* SharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161D3299722B900ECF001 /* SharedViewController.swift */; };
+		BBA161D6299722D800ECF001 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA161D5299722D800ECF001 /* InformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +170,8 @@
 		BBA161CB2996C96000ECF001 /* NextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextTableViewCell.xib; sourceTree = "<group>"; };
 		BBA161CE2996CA5900ECF001 /* NextTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTableCellViewModel.swift; sourceTree = "<group>"; };
 		BBA161D12996E30100ECF001 /* VideoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailInteractor.swift; sourceTree = "<group>"; };
+		BBA161D3299722B900ECF001 /* SharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewController.swift; sourceTree = "<group>"; };
+		BBA161D5299722D800ECF001 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +366,8 @@
 			children = (
 				BB3C8D7E29918819005115BA /* PanoNavigationController.swift */,
 				BBA161B72995D7D100ECF001 /* Viewable.swift */,
+				BBA161D3299722B900ECF001 /* SharedViewController.swift */,
+				BBA161D5299722D800ECF001 /* InformationView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */,
 				BB336771299432650053D6D9 /* Cache.swift in Sources */,
 				BBA161AD2995CD7C00ECF001 /* Updatable.swift in Sources */,
+				BBA161D6299722D800ECF001 /* InformationView.swift in Sources */,
 				BB3C8DB8299191E5005115BA /* Interactor.swift in Sources */,
 				BB3C8DB429919076005115BA /* Routes.swift in Sources */,
 				BBA161A12995CBB100ECF001 /* TableViewProvider.swift in Sources */,
@@ -735,6 +742,7 @@
 				BBA161B32995CEC100ECF001 /* TableViewProviderProtocol.swift in Sources */,
 				BBA161BA2995D9B800ECF001 /* VideoDetailViewController+Viewable.swift in Sources */,
 				BBA161B12995CDFF00ECF001 /* Sectionable.swift in Sources */,
+				BBA161D4299722B900ECF001 /* SharedViewController.swift in Sources */,
 				BBA161A72995CD0A00ECF001 /* SectionProvider.swift in Sources */,
 				BBA161C42995EC4D00ECF001 /* VideoDetailTableViewCell.swift in Sources */,
 				BBA1619E2995B98000ECF001 /* VideoListViewController.swift in Sources */,
