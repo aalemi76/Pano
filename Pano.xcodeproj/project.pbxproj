@@ -11,7 +11,6 @@
 		BB3367742994388C0053D6D9 /* VideoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3367732994388C0053D6D9 /* VideoListInteractor.swift */; };
 		BB3C8D3A299168B9005115BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D39299168B9005115BA /* AppDelegate.swift */; };
 		BB3C8D3C299168B9005115BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D3B299168B9005115BA /* SceneDelegate.swift */; };
-		BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D3D299168B9005115BA /* ViewController.swift */; };
 		BB3C8D43299168BA005115BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C8D42299168BA005115BA /* Images.xcassets */; };
 		BB3C8D46299168BA005115BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3C8D44299168BA005115BA /* LaunchScreen.storyboard */; };
 		BB3C8D51299168BA005115BA /* PanoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C8D50299168BA005115BA /* PanoTests.swift */; };
@@ -104,7 +103,6 @@
 		BB3C8D36299168B9005115BA /* Pano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C8D39299168B9005115BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB3C8D3B299168B9005115BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB3C8D3D299168B9005115BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB3C8D42299168BA005115BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB3C8D45299168BA005115BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB3C8D47299168BA005115BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Pano/SupportingFiles/Info/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -237,7 +235,6 @@
 				BB3C8D6D29916A44005115BA /* ApplicationFlow */,
 				BB3C8D7029917008005115BA /* Shared */,
 				BB3C8D69299168FB005115BA /* SupportingFiles */,
-				BB3C8D3D299168B9005115BA /* ViewController.swift */,
 			);
 			path = Pano;
 			sourceTree = "<group>";
@@ -725,7 +722,6 @@
 				BB3C8DCA2991BE5E005115BA /* ViewModelProtocol.swift in Sources */,
 				BB3C8DC42991A9A9005115BA /* VideoCell.swift in Sources */,
 				BB3367742994388C0053D6D9 /* VideoListInteractor.swift in Sources */,
-				BB3C8D3E299168B9005115BA /* ViewController.swift in Sources */,
 				BB336771299432650053D6D9 /* Cache.swift in Sources */,
 				BBA161AD2995CD7C00ECF001 /* Updatable.swift in Sources */,
 				BBA161D6299722D800ECF001 /* InformationView.swift in Sources */,
