@@ -45,6 +45,7 @@ class VideoDetailViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 150
         tableView.separatorColor = .none
+        tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 0
         tableView.sectionFooterHeight = 0
         tableView.tableHeaderView = nil

@@ -25,6 +25,7 @@ class VideoDetailInteractor: InteractorProtocol {
         DiskManager.shared.save(data, in: .library(id: id)) { _ in
             onSuccess()
         } onFailure: { error in
+            print(error)
             onFailure(.saveVideoError)
         }
 
@@ -33,9 +34,8 @@ class VideoDetailInteractor: InteractorProtocol {
     
     func loadVideo() -> URL? {
         let directory = DocumentDirectory.library(id: id)
-        let path = directory.getPath()
-        if let data = try? Data(contentsOf: path) {
-            return path
+        if DiskManager.shared.checkExistance(directory: directory) {
+            return directory.getPath()
         } else {
             return nil
         }

@@ -15,7 +15,7 @@ enum DocumentDirectory {
         case .cache(let id):
             return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0].appendingPathExtension(id + ".cache")
         case .library(let id):
-            return FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0].appendingPathExtension("\(id)" + ".mp4")
+            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(id)" + ".mp4")
         }
     }
 }
@@ -23,6 +23,10 @@ enum DocumentDirectory {
 class DiskManager {
     
     static let shared = DiskManager()
+    
+    func checkExistance(directory: DocumentDirectory) -> Bool {
+        FileManager.default.fileExists(atPath: directory.getPath().relativePath)
+    }
     
     func save(_ object: Codable,
               in directory: DocumentDirectory,
