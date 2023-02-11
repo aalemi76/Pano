@@ -15,7 +15,7 @@ final class Cache<Key: Hashable, Value> {
     private let keyPublisher: KeyPublisher = KeyPublisher()
     // MARK: - Initializer
     init(dateProvider: @escaping () -> Date = Date.init,
-         entryLifetime: TimeInterval = 4*60*60,
+         entryLifetime: TimeInterval = 8*60*60,
          maximumEntryCount: Int = 50) {
         self.dateProvider = dateProvider
         self.entryLifetime = entryLifetime
