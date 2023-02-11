@@ -109,9 +109,11 @@ class VideoDetailViewModel: ViewModelProtocol {
         if let url = interactor.loadVideo() {
             urlString = url.absoluteString
             downloadState = .downloaded
+            progress = 1
         } else {
             urlString = lesson.videoURL
             downloadState = .download
+            progress = 0
         }
         
         return urlString
