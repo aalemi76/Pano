@@ -61,6 +61,7 @@ class VideoDetailViewController: SharedViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem =
         UIBarButtonItem(image: UIImage(systemName: "icloud.and.arrow.down"),
                         style: .plain, target: self,
